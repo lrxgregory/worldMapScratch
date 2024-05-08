@@ -1,0 +1,210 @@
+:root {
+    --ocean-color: #243a59; /* Couleur de l'océan par défaut */
+    --selected-color: #ffffff; /* Couleur sélectionnée par défaut */
+    --non-selected-color: #000; /* Couleur des pays non sélectionnés par défaut */
+    --highlited-color: lightgray;
+    --border-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    overflow-y: hidden; /* Empêche le défilement vertical */
+}
+
+#carte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow-y: hidden; /* Empêche le défilement vertical */
+}
+
+#world-map {
+    padding: 1%;
+    width: 100%; /* Ajuste la largeur selon les besoins */
+    height: 100vh; /* Hauteur ajustable pour garder les proportions */
+    background-color: var(--ocean-color);
+}
+
+.highlighted {
+    fill: --highlited-color; /* Couleur de surbrillance */
+}
+
+.selected {
+    fill: var(--selected-color); /* Couleur de surbrillance */
+}
+
+path {
+    stroke: var(--border-color); /* Couleur de la bordure */
+    stroke-width: 0.1; /* Largeur de la bordure */
+}
+
+.page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligne les éléments en haut */
+}
+
+.color-pickers {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 10px; /* Espacement entre les divs */
+}
+
+.color-pickers div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.color-pickers label {
+    margin-bottom: 5px; /* Espacement entre le label et le sélecteur de couleur */
+}
+
+
+.highlighted {
+    fill: var(--highlited-color); /* Utilisation de la couleur sélectionnée */
+}
+
+.non-selected {
+    fill: var(--non-selected-color); /* Utilisation de la couleur des pays non sélectionnés */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Définit deux colonnes égales */
+    grid-gap: 10px; /* Espace entre les éléments de la grille */
+    margin-top: 5%;
+}
+
+label.country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px; /* Espace supplémentaire entre chaque élément */
+}
+
+.color-pickers.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Définit deux colonnes égales */
+    grid-gap: 10px; /* Espace entre les éléments de la grille */
+    margin-top: 5%;
+}
+
+.color-pickers div {
+    display: flex;
+    flex-direction: column;
+}
+
+.color-pickers label {
+    text-align: center; /* Centre le texte */
+}
+
+label.title {
+    font-size: 1.2rem; /* Taille de la police */
+    font-weight: bold; /* Poids de la police (gras) */
+}
+
+label.checked {
+    opacity: 0.5;
+}
+
+#panel {
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-top: 10px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre douce */
+    max-width: 20%;
+    height: 100vh;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Couleur du texte */
+}
+
+.color-pickers div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-pickers label {
+    color: #666; /* Couleur du texte */
+}
+
+input[type="color"] {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 25px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 5px;
+}
+
+#countryFilter {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: calc(100% - 20px); /* Largeur ajustée pour tenir compte de la marge */
+    margin-top: 10px;
+}
+
+#countryFilter:hover {
+    outline: none;
+    border-color: #66afe9; /* Couleur de la bordure lorsqu'il est en focus */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Ajout d'une ombre douce lorsqu'il est en focus */
+}
+
+/* Reset some default button styles */
+button {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+/* Style for the Add to Cart button */
+.add-to-cart-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.add-to-cart-btn:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+#button-container {
+    position: sticky;
+    bottom: 0px; /* Ajuste selon tes besoins */
+    width: calc(100% - 40px); /* Ajuste selon la largeur de la barre de défilement */
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    text-align: center; /* Centre le contenu du bouton */
+    /* z-index: 100; */ /* Assure que le bouton est au-dessus du contenu */
+}
+
+#countryFlagList {
+    max-height: 54vh; /* Ajuste la hauteur maximale selon tes besoins */
+    overflow-y: auto; /* Active le défilement vertical si nécessaire */
+    margin-bottom: 7%
+}
