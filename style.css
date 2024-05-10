@@ -1,9 +1,9 @@
 :root {
-    --ocean-color: #243a59; /* Couleur de l'océan par défaut */
+    --ocean-color: #091c2a; /* Couleur de l'océan par défaut */
     --selected-color: #ffffff; /* Couleur sélectionnée par défaut */
-    --non-selected-color: #000; /* Couleur des pays non sélectionnés par défaut */
-    --highlited-color: lightgray;
-    --border-color: #ffffff;
+    --non-selected-color: #e1b26a; /* Couleur des pays non sélectionnés par défaut */
+    --highlited-color: rgb(229, 229, 229);
+    --border-color: #000;
 }
 
 body {
@@ -37,6 +37,7 @@ body {
 path {
     stroke: var(--border-color); /* Couleur de la bordure */
     stroke-width: 0.1; /* Largeur de la bordure */
+    fill: var(--non-selected-color);
 }
 
 .page {
