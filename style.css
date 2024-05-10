@@ -209,3 +209,16 @@ button {
     overflow-y: auto; /* Active le défilement vertical si nécessaire */
     margin-bottom: 7%
 }
+
+#unselectAll {
+    display: none; /* Par défaut, c'est caché */
+    margin-top: 10px; /* Espacement par rapport au label */
+}
+
+#unselectAll.visible {
+    display: block; /* Le rendre visible lorsque nécessaire */
+}
+
+#unselectAll:hover {
+    cursor: pointer;
+}

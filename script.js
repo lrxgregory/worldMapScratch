@@ -5,6 +5,7 @@ const selectedColorPicker = document.getElementById("selectedColorPicker");
 const borderColorPicker = document.getElementById("borderColorPicker");
 const countryFlagList = document.getElementById('countryFlagList');
 const countryLabels = countryFlagList.querySelectorAll('.country');
+let selectedCountries = 0;
 
 let isoCode;
 
@@ -44,9 +45,16 @@ worldMap.addEventListener('click', function(event) {
             if(actualColor === selectedColor) {
                 event.target.classList.remove('selected');
                 event.target.style.fill = nonSelectedColorPicker.value;
+                let countryId = event.target.id; // Utiliser l'ID du path comme code pays
+                let label = document.querySelector('label.country input[value="' + countryId + '"]').parentNode;
+                label.classList.remove('checked');
+                selectedCountries--;
+                updateSelectedCountries();
             } else {
                 event.target.setAttribute('data-selected-color', selectedColor);
                 event.target.style.fill = selectedColor;
+                selectedCountries++;
+                updateSelectedCountries();       
             }
             
         } else {
@@ -54,6 +62,12 @@ worldMap.addEventListener('click', function(event) {
             event.target.style.removeProperty('fill');
             event.target.setAttribute('data-selected-color', selectedColor);
             event.target.classList.remove('highlighted');
+
+            let countryId = event.target.id; // Utiliser l'ID du path comme code pays
+            let label = document.querySelector('label.country input[value="' + countryId + '"]').parentNode;
+            label.classList.add('checked');
+            selectedCountries++;     
+            updateSelectedCountries();
         }
     }
 });
@@ -147,3 +161,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+function updateSelectedCountries() {
+    // Mettre à jour l'affichage en fonction de selectedCountries
+    if (selectedCountries > 0) {
+        document.getElementById('unselectAll').classList.add('visible');
+    } else {
+        document.getElementById('unselectAll').classList.remove('visible');
+    }
+}
