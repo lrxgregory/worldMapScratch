@@ -19,7 +19,7 @@
             <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.w3.org/2000/svg" mapsvg:geoViewBox="-169.110266 83.600842 190.486279 -58.508473"
-                width="1009.6727" height="665.96301" viewBox="-45 210 1100 260" id="world-map">
+                width="4200" height="2971" viewBox="-45 210 1100 260" id="world-map">
                 <!-- Contenu du SVG ici -->
 
 
@@ -784,7 +784,7 @@
             <label class="title" for="colorsSettings">Colors settings</label>
             <div class="color-pickers grid-container">
                 <div>
-                    <input type="color" id="oceanColorPicker" value="#243a59">
+                    <input type="color" id="oceanColorPicker" value="#091c2a">
                     <label for="oceanColorPicker">Ocean color</label>
                 </div>
                 <div>
@@ -792,11 +792,11 @@
                     <label for="selectedColorPicker">Color to fill</label>
                 </div>
                 <div>
-                    <input type="color" id="nonSelectedColorPicker" value="#000000">
+                    <input type="color" id="nonSelectedColorPicker" value="#e1b26a">
                     <label for="nonSelectedColorPicker">Color of no filled countries</label>
                 </div>
                 <div>
-                    <input type="color" id="borderColorPicker" value="#ffffff">
+                    <input type="color" id="borderColorPicker" value="#000000">
                     <label for="borderColorPicker">Border color</label>
                 </div>
             </div>
@@ -2752,7 +2752,7 @@
             </div>
 
             <div id="button-container">
-                <button class="add-to-cart-btn">Ajouter au panier</button>
+                <button id="button-cart" class="add-to-cart-btn">Ajouter au panier</button>
             </div>
             
         </div>
@@ -2760,6 +2760,8 @@
 
     </div>
     <script src="script.js"></script>
+    <script src="canvasvg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvg@1.5.3/dist/browser/canvg.min.js"></script>
 
 
 </body>
