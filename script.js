@@ -60,6 +60,7 @@ worldMap.addEventListener('click', function(event) {
 
 oceanColorPicker.addEventListener('change', function() {
     let oceanColor = oceanColorPicker.value;
+    document.documentElement.style.setProperty('--ocean-color', oceanColor);
     worldMap.style.backgroundColor = oceanColor;
 });
 
